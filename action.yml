@@ -1,0 +1,30 @@
+# for format details, see https://docs.github.com/actions
+
+name: Pytest summary
+author: Dario Curreri
+description: Run tests using pytest and display summary
+
+inputs:
+  path:
+    description: Path to folder containing tests
+    required: false
+    default: "tests"
+  options:
+    description: Pytest options
+    required: false
+    default: ""
+
+runs:
+  using: composite
+  steps:
+
+    - run: pip install pytest
+      shell: bash
+
+    - run: pytest ${{ inputs.options }} --junit-xml=.test_report.xml ${{ inputs.path }}
+      shell: bash
+
+    - uses: test-summary/action@v1
+      with:
+        paths: .test_report.xml
+      if: always()
