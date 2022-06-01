@@ -4,7 +4,7 @@
 
 Produce an easy-to-read summary of your project's `pytest` data as part of your GitHub Actions CI/CD workflow. This helps you understand at-a-glance the impact to the changes in your pull requests, and see which changes are introducing new problems.
 
-*   Integrates easily with your existing GitHub Actions workflow
+*   Integrates tests easily with your existing GitHub Actions workflow
 *   Produces summaries from `pytest` output
 *   Customizable to show just a summary, just failed tests, or all test results.
 
@@ -52,11 +52,11 @@ The `pytest-summary` step generates a summary in GitHub-flavored Markdown (GFM).
 
 ## Options
 
-Options are specified on the [`with` map](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepswith) of the action.
+Options are specified on the [`with`](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepswith) map of the action.
 
 *   **`paths`: the path to the folder containing the tests** (optional, by default `tests`)  
 
-*   **options: the `pytest` options** (optional, by default no options are specified)
+*   **`options`: the `pytest` options** (optional, by default no options are specified)
  Before specify it, please have a look [here](https://docs.pytest.org)
 
 *   **`output`: the path to the output file to create** (optional, by default the output will be to the workflow summary)  
@@ -68,7 +68,7 @@ Options are specified on the [`with` map](https://docs.github.com/en/actions/usi
       output: "summary.md"
   ```
 
-*   **show: which tests have to be shown in the summary** (optional, by default just the failed tests are shown in the summary)
+*   **`show`: which tests have to be shown in the summary** (optional, by default just the failed tests are shown in the summary)
 
     *   To show all tests, specify: `show: all`
     *   To show no tests, specify: `show: none`
