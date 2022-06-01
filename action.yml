@@ -5,14 +5,19 @@ author: Dario Curreri
 description: Run tests using pytest and display summary
 
 inputs:
-  path:
-    description: Path to folder containing tests
+  paths:
+    description: The path to the folder containing the tests
     required: false
     default: "tests"
   options:
-    description: Pytest options
+    description: The pytest options
     required: false
-    default: ""
+  output:
+    description: The path to the output file to create
+    required: false
+  show:
+    description: Which tests have to be shown in the summary
+    required: false
 
 runs:
   using: composite
@@ -27,4 +32,6 @@ runs:
     - uses: test-summary/action@v1
       with:
         paths: .test_report.xml
+        output: ${{ inputs.output }} 
+        show: ${{ inputs.show }} 
       if: always()
