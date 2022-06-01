@@ -65,7 +65,7 @@ Options are specified on the [`with`](https://docs.github.com/en/actions/using-w
     ```yaml
     - uses: dariocurr/pytest-summary@main
       with:
-        output: "summary.md"
+        output: "test-summary.md"
     ```
 
 *   **`show`**: which tests have to be shown in the summary (optional, by default just the failed tests are shown in the summary)
