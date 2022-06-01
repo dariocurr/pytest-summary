@@ -1,6 +1,6 @@
 # pytest-summary
 
-> This action is just an extension of the [`test-summary`](https://github.com/test-summary) action.
+> This action is just an extension of the [`test-summary`](https://github.com/test-summary) action
 
 Produce an easy-to-read summary of your project's `pytest` data as part of your GitHub Actions CI/CD workflow. This helps you understand at-a-glance the impact to the changes in your pull requests, and see which changes are introducing new problems.
 
