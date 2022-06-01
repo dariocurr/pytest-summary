@@ -1,10 +1,10 @@
-# for format details, see https://docs.github.com/actions
-
 name: Pytest summary
-author: Dario Curreri
 description: Run tests using pytest and display summary
-icon: check-square
-color: gray-dark
+author: Dario Curreri
+
+branding:
+  icon: check-square
+  color: gray-dark
 
 inputs:
   paths:
