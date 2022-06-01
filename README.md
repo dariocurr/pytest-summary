@@ -54,12 +54,12 @@ The `pytest-summary` step generates a summary in GitHub-flavored Markdown (GFM).
 
 Options are specified on the [`with`](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepswith) map of the action.
 
-*   **`paths`: the path to the folder containing the tests** (optional, by default `tests`)  
+*   **`paths`**: the path to the folder containing the tests (optional, by default `tests`)  
 
-*   **`options`: the `pytest` options** (optional, by default no options are specified)
+*   **`options`**: the `pytest` options (optional, by default no options are specified)
  Before specify it, please have a look [here](https://docs.pytest.org)
 
-*   **`output`: the path to the output file to create** (optional, by default the output will be to the workflow summary)  
+*   **`output`**: the path to the output file to create (optional, by default the output will be to the workflow summary)  
   This is the path to the output file to populate with the `pytest` summary markdown data. For example:
 
     ```yaml
@@ -68,7 +68,7 @@ Options are specified on the [`with`](https://docs.github.com/en/actions/using-w
         output: "summary.md"
     ```
 
-*   **`show`: which tests have to be shown in the summary** (optional, by default just the failed tests are shown in the summary)
+*   **`show`**: which tests have to be shown in the summary (optional, by default just the failed tests are shown in the summary)
 
     *   To show all tests, specify: `show: all`
     *   To show no tests, specify: `show: none`
