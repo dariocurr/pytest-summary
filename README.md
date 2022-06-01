@@ -62,11 +62,11 @@ Options are specified on the [`with`](https://docs.github.com/en/actions/using-w
 *   **`output`: the path to the output file to create** (optional, by default the output will be to the workflow summary)  
   This is the path to the output file to populate with the `pytest` summary markdown data. For example:
 
-  ```yaml
-  - uses: dariocurr/pytest-summary@main
-    with:
-      output: "summary.md"
-  ```
+    ```yaml
+    - uses: dariocurr/pytest-summary@main
+      with:
+        output: "summary.md"
+    ```
 
 *   **`show`: which tests have to be shown in the summary** (optional, by default just the failed tests are shown in the summary)
 
