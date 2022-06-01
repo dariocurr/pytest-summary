@@ -3,6 +3,8 @@
 name: Pytest summary
 author: Dario Curreri
 description: Run tests using pytest and display summary
+icon: check-square
+color: gray-dark
 
 inputs:
   paths:
