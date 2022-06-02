@@ -10,7 +10,7 @@ inputs:
   paths:
     description: The path to the folder containing the tests
     required: false
-    default: "tests"
+    default: tests
   options:
     description: The pytest options
     required: false
@@ -28,7 +28,7 @@ runs:
     - run: pip install pytest
       shell: bash
 
-    - run: pytest ${{ inputs.options }} --junit-xml=.test_report.xml ${{ inputs.path }}
+    - run: pytest ${{ inputs.options }} --junit-xml=.test_report.xml ${{ inputs.paths }}
       shell: bash
 
     - uses: test-summary/action@v1
