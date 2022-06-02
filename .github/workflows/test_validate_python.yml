@@ -1,6 +1,6 @@
 # for format details, see https://docs.github.com/actions
 
-name: "[TEST] Validate Python simple"
+name: "[TEST] Validate Python: simple"
 
 on:
   workflow_dispatch:
