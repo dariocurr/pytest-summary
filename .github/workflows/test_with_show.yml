@@ -2,6 +2,8 @@ name: "[TEST] with show"
 
 on:
   workflow_dispatch:
+    branches:
+      - develop
   push:
     branches:
       - develop
