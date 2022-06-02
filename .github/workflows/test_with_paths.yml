@@ -2,6 +2,8 @@ name: "[TEST] with paths"
 
 on:
   workflow_dispatch:
+    branches:
+      - develop
   push:
     branches:
       - develop
@@ -35,7 +37,7 @@ jobs:
         uses: dariocurr/pytest-summary@main
         with:
           paths: |
-            tests/test_false.py
+            tests/test_false.py \
             tests/test_true.py
   glob-pattern:
     runs-on: ubuntu-latest
