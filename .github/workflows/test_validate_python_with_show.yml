@@ -1,0 +1,36 @@
+# for format details, see https://docs.github.com/actions
+
+name: "[TEST] Validate Python: with options"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  validate-show-all:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+
+      - name: Set up Python
+        uses: actions/setup-python@main
+        with:
+          python-version: "3.9"
+
+      - name: Run tests
+        uses: dariocurr/pytest-summary@main
+        with:
+          show: all
+  validate-show-none:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+
+      - name: Set up Python
+        uses: actions/setup-python@main
+        with:
+          python-version: "3.9"
+
+      - name: Run tests
+        uses: dariocurr/pytest-summary@main
+        with:
+          show: none
