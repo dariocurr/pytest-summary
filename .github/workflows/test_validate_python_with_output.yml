@@ -1,0 +1,22 @@
+# for format details, see https://docs.github.com/actions
+
+name: "[TEST] Validate Python: with output"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+
+      - name: Set up Python
+        uses: actions/setup-python@main
+        with:
+          python-version: "3.9"
+
+      - name: Run tests
+        uses: dariocurr/pytest-summary@main
+        with:
+          output: test-summary.md
