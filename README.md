@@ -17,7 +17,7 @@ This helps you understand at-a-glance the impact to the changes in your pull req
 
 > This action requires a python set up before its usage (e.g [setup-python](https://github.com/actions/setup-python)).
 >For example:
-
+>
 >```yaml
 >- name: Set up Python
 >   uses: actions/setup-python@main
@@ -28,8 +28,7 @@ This helps you understand at-a-glance the impact to the changes in your pull req
 To set up the `pytest` summary action, just add a few lines of YAML to your GitHub Actions workflow:
 
 ```yaml
-- name: Test Summary
-  uses: dariocurr/pytest-summary@main
+-  uses: dariocurr/pytest-summary@main
   with:
     paths: tests
 ```
@@ -37,8 +36,7 @@ To set up the `pytest` summary action, just add a few lines of YAML to your GitH
 Update `paths` to match the tests paths. In addition, you can specify multiple test paths on multiple lines. For example:
 
 ```yaml
-- name: Test Summary
-  uses: dariocurr/pytest-summary@main
+- uses: dariocurr/pytest-summary@main
   with:
     paths: |
       tests/test_file_1.py
@@ -75,7 +73,7 @@ Options are specified on the [`with`](https://docs.github.com/en/actions/using-w
     ```yaml
     - uses: dariocurr/pytest-summary@main
       with:
-        options: "-vv -s"
+        options: -vv -s
     ```
 
 *   **`output`**: the path to the output file to create (optional, by default the output will be to the workflow summary)  
@@ -84,7 +82,7 @@ Options are specified on the [`with`](https://docs.github.com/en/actions/using-w
     ```yaml
     - uses: dariocurr/pytest-summary@main
       with:
-        output: "test-summary.md"
+        output: test-summary.md
     ```
 
 *   **`show`**: which tests have to be shown in the summary (optional, by default just the failed tests are shown in the summary)
