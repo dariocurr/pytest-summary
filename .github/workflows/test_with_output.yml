@@ -1,12 +1,10 @@
-# for format details, see https://docs.github.com/actions
-
-name: "[TEST] Validate Python: with output"
+name: "[TEST] with output"
 
 on:
   workflow_dispatch:
 
 jobs:
-  validate:
+  output:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main

@@ -1,12 +1,10 @@
-# for format details, see https://docs.github.com/actions
-
-name: "[TEST] Validate Python: simple"
+name: "[TEST] with options"
 
 on:
   workflow_dispatch:
 
 jobs:
-  validate:
+  options:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
@@ -18,3 +16,5 @@ jobs:
 
       - name: Run tests
         uses: dariocurr/pytest-summary@main
+        with:
+          options: -vv -s

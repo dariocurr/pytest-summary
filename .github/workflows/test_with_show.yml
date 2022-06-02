@@ -1,12 +1,10 @@
-# for format details, see https://docs.github.com/actions
-
-name: "[TEST] Validate Python: with show"
+name: "[TEST] with show"
 
 on:
   workflow_dispatch:
 
 jobs:
-  validate-show-all:
+  show-all:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
@@ -20,7 +18,7 @@ jobs:
         uses: dariocurr/pytest-summary@main
         with:
           show: all
-  validate-show-none:
+  show-none:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
