@@ -25,23 +25,59 @@ This helps you understand at-a-glance the impact to the changes in your pull req
 >     python-version: "3.9"
 >```
 
-To set up the `pytest` summary action, just add a few lines of YAML to your GitHub Actions workflow:
+To set up the `pytest` summary action, just add the following line of YAML to your GitHub Actions workflow:
 
 ```yaml
 -  uses: dariocurr/pytest-summary@main
-  with:
-    paths: tests
 ```
 
-Update `paths` to match the tests paths. In addition, you can specify multiple test paths on multiple lines. For example:
+---
 
-```yaml
-- uses: dariocurr/pytest-summary@main
-  with:
-    paths: |
-      tests/test_file_1.py
-      tests/test_file_2.py
-```
+## Options
+
+Options are specified on the [`with`](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepswith) map of the action.
+
+*   **`paths`**: the path to the folders or files containing the tests (optional, by default `tests`)  
+  You can specify glob patterns, including `**` to match the pattern recursively or specify multiple test paths on multiple lines. For example:
+
+    ```yaml
+    uses: dariocurr/pytest-summary@main
+    with:
+      paths: tests/**.py
+    ```
+
+    or
+
+    ```yaml
+    uses: dariocurr/pytest-summary@main
+    with:
+      paths: |
+        tests/test_file_1.py
+        tests/test_file_2.py
+    ```
+
+*   **`options`**: the `pytest` options (optional, by default no options are include)
+ To specify them correclty, please have a look [here](https://docs.pytest.org). For example:
+
+    ```yaml
+    - uses: dariocurr/pytest-summary@main
+      with:
+        options: -vv -s
+    ```
+
+*   **`output`**: the path where to create the output (optional, by default the output will be the workflow summary)  
+  The path to the GitHub-flavored Markdown (GFM) output file to populate with the `pytest` summary markdown data. For example:
+
+    ```yaml
+    - uses: dariocurr/pytest-summary@main
+      with:
+        output: test-summary.md
+    ```
+
+*   **`show`**: which tests have to be shown in the summary (optional, by default just the failed tests are shown in the summary)
+
+    *   To show all tests, specify: `show: all`
+    *   To show no tests, specify: `show: none`
 
 ---
 
@@ -59,33 +95,3 @@ The `pytest-summary` step generates a summary in GitHub-flavored Markdown (GFM).
 ```
 
 > Note the if: always() conditional in this workflow step: you should always use this so that the test summary creation step runs even if the previous steps have failed. This allows your test step to fail -- due to failing tests -- but still produce a test summary.
----
-
-## Options
-
-Options are specified on the [`with`](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepswith) map of the action.
-
-*   **`paths`**: the path to the folder containing the tests (optional, by default `tests`)  
-
-*   **`options`**: the `pytest` options (optional, by default no options are specified)
- Before specify it, please have a look [here](https://docs.pytest.org). For example:
-
-    ```yaml
-    - uses: dariocurr/pytest-summary@main
-      with:
-        options: -vv -s
-    ```
-
-*   **`output`**: the path to the output file to create (optional, by default the output will be to the workflow summary)  
-  This is the path to the output file to populate with the `pytest` summary markdown data. For example:
-
-    ```yaml
-    - uses: dariocurr/pytest-summary@main
-      with:
-        output: test-summary.md
-    ```
-
-*   **`show`**: which tests have to be shown in the summary (optional, by default just the failed tests are shown in the summary)
-
-    *   To show all tests, specify: `show: all`
-    *   To show no tests, specify: `show: none`
