@@ -1,0 +1,52 @@
+# for format details, see https://docs.github.com/actions
+
+name: "[TEST] Validate Python: with paths"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  validate-single-path:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+
+      - name: Set up Python
+        uses: actions/setup-python@main
+        with:
+          python-version: "3.9"
+
+      - name: Run tests
+        uses: dariocurr/pytest-summary@main
+        with:
+          paths: tests/test_true.py
+  validate-multiple-path:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+
+      - name: Set up Python
+        uses: actions/setup-python@main
+        with:
+          python-version: "3.9"
+
+      - name: Run tests
+        uses: dariocurr/pytest-summary@main
+        with:
+          paths: |
+            tests/test_false.py
+            tests/test_true.py
+  validate-glob-pattern:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+
+      - name: Set up Python
+        uses: actions/setup-python@main
+        with:
+          python-version: "3.9"
+
+      - name: Run tests
+        uses: dariocurr/pytest-summary@main
+        with:
+          paths: tests/**.py
