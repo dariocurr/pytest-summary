@@ -58,8 +58,8 @@ Options are specified on the [`with`](https://docs.github.com/en/actions/using-w
         tests/test_file_2.py
     ```
 
-*   **`options`**: the `pytest` options (optional, by default no options are include)
- To specify them correclty, please have a look [here](https://docs.pytest.org). For example:
+*   **`options`**: the `pytest` options (optional, by default no options are include)  
+To specify them correctly, please have a look [here](https://docs.pytest.org). For example:
 
     ```yaml
     - uses: dariocurr/pytest-summary@main
