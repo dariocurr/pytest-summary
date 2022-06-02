@@ -24,7 +24,7 @@ This helps you understand at-a-glance the impact to the changes in your pull req
 >- name: Set up Python
 >   uses: actions/setup-python@main
 >   with:
->     python-version: "3.9"
+>     python-version: "3.10"
 >```
 
 To set up the `pytest` summary action, just add the following line of YAML to your GitHub Actions workflow:
@@ -54,7 +54,7 @@ Options are specified on the [`with`](https://docs.github.com/en/actions/using-w
     uses: dariocurr/pytest-summary@main
     with:
       paths: |
-        tests/test_file_1.py
+        tests/test_file_1.py \
         tests/test_file_2.py
     ```
 
