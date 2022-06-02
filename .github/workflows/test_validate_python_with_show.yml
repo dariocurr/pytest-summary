@@ -1,6 +1,6 @@
 # for format details, see https://docs.github.com/actions
 
-name: "[TEST] Validate Python: with options"
+name: "[TEST] Validate Python: with show"
 
 on:
   workflow_dispatch:
