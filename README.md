@@ -13,7 +13,15 @@ This helps you understand at-a-glance the impact to the changes in your pull req
 
 ## Getting Started
 
-> This action requires a python set up before its usage (e.g [setup-python](https://github.com/actions/setup-python))
+> This action requires a python set up before its usage (e.g [setup-python](https://github.com/actions/setup-python)).
+>For example:
+
+>```yaml
+>- name: Set up Python
+>   uses: actions/setup-python@main
+>   with:
+>     python-version: "3.9"
+>```
 
 To set up the `pytest` summary action, just add a few lines of YAML to your GitHub Actions workflow:
 
