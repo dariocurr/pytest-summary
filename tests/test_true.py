@@ -1,2 +1,2 @@
-def test_true():
+async def test_true():
     assert True

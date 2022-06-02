@@ -1,8 +1,8 @@
 # pytest-summary
 
-![example workflow](https://github.com/dariocurr/pytest-summary/actions/workflows/validate_action.yml/badge.svg)
+![Workflow badge](https://github.com/dariocurr/pytest-summary/actions/workflows/validate_action.yml/badge.svg)
 
-![Exampl summary](https://user-images.githubusercontent.com/48800335/171606700-86ff892f-11d6-43e9-8f8c-ef9b1e459d3a.png)
+![Example summary](https://user-images.githubusercontent.com/48800335/171606700-86ff892f-11d6-43e9-8f8c-ef9b1e459d3a.png)
 
 > This action is just an extension of the [`test-summary`](https://github.com/test-summary) action
 
@@ -24,7 +24,7 @@ This helps you understand at-a-glance the impact to the changes in your pull req
 >- name: Set up Python
 >   uses: actions/setup-python@main
 >   with:
->     python-version: "3.9"
+>     python-version: "3.10"
 >```
 
 To set up the `pytest` summary action, just add the following line of YAML to your GitHub Actions workflow:
@@ -54,7 +54,7 @@ Options are specified on the [`with`](https://docs.github.com/en/actions/using-w
     uses: dariocurr/pytest-summary@main
     with:
       paths: |
-        tests/test_file_1.py
+        tests/test_file_1.py \
         tests/test_file_2.py
     ```
 
