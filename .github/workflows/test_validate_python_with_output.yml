@@ -22,5 +22,4 @@ jobs:
           output: test-summary.md
 
       - name: Check report
-        run: ls
-        if: always()
+        run: python -c "import os; assert 'test-summary.md' in os.listdir('.')"
