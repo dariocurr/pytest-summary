@@ -2,6 +2,9 @@ name: "[TEST] with show"
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - develop
 
 jobs:
   show-all:

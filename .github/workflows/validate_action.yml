@@ -1,7 +1,14 @@
-name: "Validate Action"
+name: "Validate action"
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+      - develop
+  push:
+    branches:
+      - develop
 
 jobs:
   validate:

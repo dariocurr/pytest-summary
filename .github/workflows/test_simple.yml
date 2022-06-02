@@ -2,6 +2,9 @@ name: "[TEST] simple"
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - develop
 
 jobs:
   simple:

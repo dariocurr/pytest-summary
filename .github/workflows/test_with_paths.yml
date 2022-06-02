@@ -2,6 +2,9 @@ name: "[TEST] with paths"
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - develop
 
 jobs:
   single-path:
