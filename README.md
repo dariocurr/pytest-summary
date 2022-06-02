@@ -1,5 +1,7 @@
 # pytest-summary
 
+![Example](https://user-images.githubusercontent.com/48800335/171606700-86ff892f-11d6-43e9-8f8c-ef9b1e459d3a.png)
+
 > This action is just an extension of the [`test-summary`](https://github.com/test-summary) action
 
 Run your pytests and produce an easy-to-read summary as part of your GitHub Actions CI/CD workflow.
