@@ -1,8 +1,8 @@
 # pytest-summary
 
-![example workflow](https://github.com/dariocurr/pytest-summary/actions/workflows/validate_action.yml/badge.svg)
+![Workflow badge](https://github.com/dariocurr/pytest-summary/actions/workflows/validate_action.yml/badge.svg)
 
-![Exampl summary](https://user-images.githubusercontent.com/48800335/171606700-86ff892f-11d6-43e9-8f8c-ef9b1e459d3a.png)
+![Example summary](https://user-images.githubusercontent.com/48800335/171606700-86ff892f-11d6-43e9-8f8c-ef9b1e459d3a.png)
 
 > This action is just an extension of the [`test-summary`](https://github.com/test-summary) action
 
