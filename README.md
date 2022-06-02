@@ -2,7 +2,8 @@
 
 > This action is just an extension of the [`test-summary`](https://github.com/test-summary) action
 
-Produce an easy-to-read summary of your project's `pytest` data as part of your GitHub Actions CI/CD workflow. This helps you understand at-a-glance the impact to the changes in your pull requests, and see which changes are introducing new problems.
+Run your pytests and produce an easy-to-read summary as part of your GitHub Actions CI/CD workflow.
+This helps you understand at-a-glance the impact to the changes in your pull requests, and see which changes are introducing new problems.
 
 *   Integrates tests easily with your existing GitHub Actions workflow
 *   Produces summaries from `pytest` output
@@ -11,6 +12,8 @@ Produce an easy-to-read summary of your project's `pytest` data as part of your 
 ---
 
 ## Getting Started
+
+> This action requires a python set up before its usage (e.g [setup-python](https://github.com/actions/setup-python))
 
 To set up the `pytest` summary action, just add a few lines of YAML to your GitHub Actions workflow:
 
