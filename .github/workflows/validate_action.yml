@@ -20,6 +20,7 @@ jobs:
       - name: Run tests
         uses: dariocurr/pytest-summary@main
         with:
-          paths: tests/test_true.py
+          extensions: pytest-asyncio
           options: -x
+          paths: tests/test_true.py
           show: all

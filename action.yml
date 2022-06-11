@@ -7,16 +7,19 @@ branding:
   color: gray-dark
 
 inputs:
-  paths:
-    description: The path to the folder containing the tests
+  extensions:
+    description: The pytest extensions to install along pytest
     required: false
-    default: tests
   options:
     description: The pytest options
     required: false
   output:
     description: The path to the output file to create
     required: false
+  paths:
+    description: The path to the folder containing the tests
+    required: false
+    default: tests
   show:
     description: Which tests have to be shown in the summary
     required: false
@@ -25,7 +28,7 @@ runs:
   using: composite
   steps:
 
-    - run: pip install pytest
+    - run: pip install pytest ${{ inputs.extensions }}
       shell: bash
 
     - run: pytest ${{ inputs.options }} --junit-xml=.test_report.xml ${{ inputs.paths }}

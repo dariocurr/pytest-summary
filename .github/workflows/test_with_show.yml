@@ -22,7 +22,9 @@ jobs:
       - name: Run tests
         uses: dariocurr/pytest-summary@main
         with:
+          extensions: pytest-asyncio
           show: all
+
   show-none:
     runs-on: ubuntu-latest
     steps:
@@ -36,4 +38,5 @@ jobs:
       - name: Run tests
         uses: dariocurr/pytest-summary@main
         with:
+          extensions: pytest-asyncio
           show: none

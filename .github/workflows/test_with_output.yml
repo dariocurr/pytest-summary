@@ -22,6 +22,7 @@ jobs:
       - name: Run tests
         uses: dariocurr/pytest-summary@main
         with:
+          extensions: pytest-asyncio
           output: test-summary.md
 
       - name: Check report

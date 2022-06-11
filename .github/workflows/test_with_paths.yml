@@ -22,7 +22,9 @@ jobs:
       - name: Run tests
         uses: dariocurr/pytest-summary@main
         with:
+          extensions: pytest-asyncio
           paths: tests/test_true.py
+
   multiple-paths:
     runs-on: ubuntu-latest
     steps:
@@ -36,9 +38,11 @@ jobs:
       - name: Run tests
         uses: dariocurr/pytest-summary@main
         with:
+          extensions: pytest-asyncio
           paths: |
             tests/test_false.py \
             tests/test_true.py
+  
   glob-pattern:
     runs-on: ubuntu-latest
     steps:
@@ -52,4 +56,5 @@ jobs:
       - name: Run tests
         uses: dariocurr/pytest-summary@main
         with:
+          extensions: pytest-asyncio
           paths: tests/**.py
