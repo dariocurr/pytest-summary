@@ -39,7 +39,7 @@ To set up the `pytest` summary action, just add the following line of YAML to yo
 
 Options are specified on the [`with`](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepswith) map of the action.
 
-*   **extensions**: the pytest extensions to install along pytest (optional, by default no extensions are included)  
+*   **extensions**: the `pytest` extensions to install along `pytest` (optional, by default no extensions are included)  
 For example:
 
     ```yaml
