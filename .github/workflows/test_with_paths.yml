@@ -42,7 +42,7 @@ jobs:
           paths: |
             tests/test_false.py \
             tests/test_true.py
-  
+
   glob-pattern:
     runs-on: ubuntu-latest
     steps:
