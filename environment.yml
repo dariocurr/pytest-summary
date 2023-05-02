@@ -2,8 +2,8 @@ name: pytest-summary
 
 dependencies:
   - python=3.10
-  - isort
-  - flake8
   - black
+  - flake8
+  - isort
+  - pre-commit
   - pytest
-  - pytest-asyncio
