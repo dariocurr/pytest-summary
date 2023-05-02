@@ -92,10 +92,8 @@ To specify them correctly, please have a look [here](https://docs.pytest.org). F
         tests/test_file_2.py
     ```
 
-*   **`show`**: which tests have to be shown in the summary (optional, by default just the failed tests are shown in the summary)
-
-    *   To show all tests, specify: `show: all`
-    *   To show no tests, specify: `show: none`
+*   **`show`**:  which tests have to be shown in the summary (optional, by default `fail`)
+  This controls whether a test summary table is created or not, as well as what tests are included. It could be all, none, pass, skip, or fail. The default is fail - that is, the summary table will only show the failed tests. For example, if you wanted to show failed and skipped tests:
 
 ---
 
