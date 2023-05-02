@@ -46,7 +46,7 @@ To set up the `pytest` summary action, just add the following line of YAML to yo
 
 Options are specified on the [`with`](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepswith) map of the action.
 
-*   **extensions**: the `pytest` extensions to install along `pytest` (optional, by default no extensions are included)  
+*   **extensions**: the `pytest` extensions to install along `pytest` (optional, by default no extensions are included)
 For example:
 
     ```yaml
@@ -55,7 +55,7 @@ For example:
         extensions: pytest-asyncio pytest-cov
     ```
 
-*   **`options`**: the `pytest` options (optional, by default no options are include)  
+*   **`options`**: the `pytest` options (optional, by default no options are include)
 To specify them correctly, please have a look [here](https://docs.pytest.org). For example:
 
     ```yaml
@@ -64,7 +64,7 @@ To specify them correctly, please have a look [here](https://docs.pytest.org). F
         options: -vv -s
     ```
 
-*   **`output`**: the path where to create the output (optional, by default the output will be the workflow summary)  
+*   **`output`**: the path where to create the output (optional, by default the output will be the workflow summary)
   The path to the GitHub-flavored Markdown (GFM) output file to populate with the `pytest` summary markdown data. For example:
 
     ```yaml
@@ -73,7 +73,7 @@ To specify them correctly, please have a look [here](https://docs.pytest.org). F
         output: test-summary.md
     ```
 
-*   **`paths`**: the path to the folders or files containing the tests (optional, by default `tests`)  
+*   **`paths`**: the path to the folders or files containing the tests (optional, by default `tests`)
   You can specify glob patterns, including `**` to match the pattern recursively or specify multiple test paths on multiple lines. For example:
 
     ```yaml

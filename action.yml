@@ -37,6 +37,6 @@ runs:
     - uses: test-summary/action@v1
       with:
         paths: .test_report.xml
-        output: ${{ inputs.output }} 
-        show: ${{ inputs.show }} 
+        output: ${{ inputs.output }}
+        show: ${{ inputs.show }}
       if: always()
