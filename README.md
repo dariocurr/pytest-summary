@@ -6,7 +6,7 @@
 
 > This action is just an extension of the [`test-summary`](https://github.com/test-summary) action
 
-Run your pytests and produce an easy-to-read summary as part of your GitHub Actions CI/CD workflow.  
+Run your pytests and produce an easy-to-read summary as part of your GitHub Actions CI/CD workflow.
 This helps you understand at-a-glance the impact to the changes in your pull requests, and see which changes are introducing new problems.
 
 Pillars:
@@ -101,8 +101,8 @@ To specify them correctly, please have a look [here](https://docs.pytest.org). F
 
 ## Upload the markdown
 
-The `pytest-summary` step generates a summary in GitHub-flavored Markdown (GFM).  
-Once the markdown is generated, you can upload it as a build artifact, add it to a pull request comment, or add it to an issue.  
+The `pytest-summary` step generates a summary in GitHub-flavored Markdown (GFM).
+Once the markdown is generated, you can upload it as a build artifact, add it to a pull request comment, or add it to an issue.
 For example, to upload the markdown generated in the prior example as a build artifact:
 
 ```yaml
