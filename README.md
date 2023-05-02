@@ -10,6 +10,7 @@ Run your pytests and produce an easy-to-read summary as part of your GitHub Acti
 This helps you understand at-a-glance the impact to the changes in your pull requests, and see which changes are introducing new problems.
 
 Pillars:
+
 *   Integrates tests easily with your existing GitHub Actions workflow
 *   Produces summaries from `pytest` output
 *   Customizable to show just a summary, just failed tests, or all test results.
@@ -94,6 +95,12 @@ To specify them correctly, please have a look [here](https://docs.pytest.org). F
 
 *   **`show`**:  which tests have to be shown in the summary (optional, by default `fail`)
   This controls whether a test summary table is created or not, as well as what tests are included. It could be all, none, pass, skip, or fail. The default is fail - that is, the summary table will only show the failed tests. For example, if you wanted to show failed and skipped tests:
+
+    ```yaml
+    uses: dariocurr/pytest-summary@main
+    with:
+      show: "fail, skip"
+    ```
 
 ---
 
