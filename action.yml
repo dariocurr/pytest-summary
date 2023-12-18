@@ -34,7 +34,7 @@ runs:
     - run: pytest ${{ inputs.options }} --junit-xml=.test_report.xml ${{ inputs.paths }}
       shell: bash
 
-    - uses: test-summary/action@v2.1
+    - uses: test-summary/action@v2.2
       with:
         paths: .test_report.xml
         output: ${{ inputs.output }}
