@@ -1,14 +1,23 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.6.0
     hooks:
+      - id: check-ast
+      - id: check-builtin-literals
       - id: check-case-conflict
       - id: check-docstring-first
       - id: check-json
       - id: check-merge-conflict
       - id: check-symlinks
+      - id: check-toml
       - id: check-vcs-permalinks
+      - id: check-xml
+      - id: check-yaml
+        args: ["--unsafe"]
+      - id: debug-statements
       - id: destroyed-symlinks
+      - id: detect-aws-credentials
+        args: [--allow-missing-credentials]
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: fix-byte-order-marker
@@ -16,26 +25,23 @@ repos:
       - id: name-tests-test
         args: [--pytest-test-first]
       - id: no-commit-to-branch
-        args: [-b, main]
+        args: [-b, master, -b, qa]
       - id: pretty-format-json
-        args: [--autofix, --no-sort-keys]
+        args: [--autofix]
       - id: sort-simple-yaml
       - id: trailing-whitespace
 
-  - repo: https://github.com/psf/black
-    rev: 23.3.0
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.4
     hooks:
-      - id: black
+      - id: gitleaks
 
-  - repo: https://github.com/pycqa/flake8
-    rev: 6.0.0
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.1
     hooks:
-      - id: flake8
-
-  - repo: https://github.com/pycqa/isort
-    rev: 5.12.0
-    hooks:
-      - id: isort
+      - id: ruff
+        args: [ --fix ]
+      - id: ruff-format
 
 ci:
   autoupdate_branch: develop
