@@ -9,25 +9,7 @@ on:
 
 jobs:
   release:
-    runs-on: ubuntu-latest
-    timeout-minutes: 1
-    steps:
-      - name: Checkout origin repo
-        uses: actions/checkout@v4.1.7
-
-      - name: Set up Python
-        uses: actions/setup-python@main
-        with:
-          python-version: "3.12"
-
-      - name: Install Python dependencies
-        run: pip install --disable-pip-version-check nox pyyaml
-
-      - name: Update tags
-        id: tags
-        run: nox -s update_tags
-
-      - name: Create Github release
-        uses: softprops/action-gh-release@v2.0.8
-        with:
-          tag_name: ${{ steps.tags.outputs.tag }}
+    uses: dariocurr/.github/.github/workflows/tracking_release.yml@main
+    secrets: inherit
+    with:
+      action_to_track: test-summary/action
