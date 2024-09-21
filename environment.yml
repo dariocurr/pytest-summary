@@ -1,9 +1,11 @@
 name: pytest-summary
 
 dependencies:
-  - python=3.10
-  - black
-  - flake8
-  - isort
-  - pre-commit
-  - pytest
+  - python>=3.12,<3.13
+  - pip
+  - pip:
+    - nox
+    - pre-commit
+    - pyyaml
+    - pytest
+    - ruff
