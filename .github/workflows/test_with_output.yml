@@ -1,12 +1,11 @@
 name: "[TEST] with output"
 
 on:
-  workflow_dispatch:
-    branches:
-      - develop
   push:
     branches:
       - develop
+
+  workflow_dispatch:
 
 jobs:
   output:
@@ -17,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@main
         with:
-          python-version: "3.10"
+          python-version: "3.12"
 
       - name: Run tests
         uses: dariocurr/pytest-summary@main
