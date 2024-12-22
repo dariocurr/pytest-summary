@@ -42,7 +42,3 @@ repos:
       - id: ruff
         args: [ --fix ]
       - id: ruff-format
-
-ci:
-  autoupdate_branch: develop
-  autoupdate_commit_msg: ⬆ [pre-commit.ci] pre-commit autoupdate
