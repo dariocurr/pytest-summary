@@ -1,5 +1,14 @@
 [tool.ruff.lint]
-select = ["A", "C", "C4", "E", "F", "I", "Q", "T", "SIM", "UP", "W"]
-
-[tool.ruff.lint.per-file-ignores]
-"__init__.py" = ["F401"]
+select = [
+    "A",
+    "C",
+    "C4",
+    "E",
+    "F",
+    "I",
+    "Q",
+    "SIM",
+    "T",
+    "UP",
+    "W",
+]
