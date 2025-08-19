@@ -1,4 +1,4 @@
-name: "Validate action"
+name: validate
 
 on:
   workflow_dispatch:
@@ -8,16 +8,18 @@ on:
 
 jobs:
   validate:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
 
-      - name: Set up Python
+      - name: set up python
         uses: actions/setup-python@main
         with:
           python-version: "3.12"
 
-      - name: Run tests
+      - name: run tests
         uses: dariocurr/pytest-summary@main
         with:
           extensions: pytest-asyncio
