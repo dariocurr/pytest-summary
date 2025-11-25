@@ -1,6 +1,6 @@
-name: Pytest summary
-description: Run tests using pytest and display summary
-author: Dario Curreri
+name: pytest summary
+description: run tests using pytest and display a summary
+author: dariocurr
 
 branding:
   icon: check-square
@@ -8,27 +8,34 @@ branding:
 
 inputs:
   extensions:
-    description: The pytest extensions to install along pytest
+    description: the pytest extensions to install along pytest
     required: false
   options:
-    description: The pytest options
+    description: the pytest options
     required: false
   output:
-    description: The path to the output file to create
+    description: the path to the output file to create
     required: false
   paths:
-    description: The path to the folder containing the tests
+    description: the path to the folder containing the tests
     required: false
     default: tests
   show:
-    description: Which tests have to be shown in the summary
+    description: which tests have to be shown in the summary
+    required: false
+  venv:
+    description: path to virtual environment to activate
     required: false
 
 runs:
   using: composite
   steps:
+    - if: ${{ inputs.venv }}
+      run: source ${{ inputs.venv }}/bin/activate
+      shell: bash
 
-    - run: pip install pytest ${{ inputs.extensions }}
+    - if: ${{ !inputs.venv }}
+      run: pip install pytest ${{ inputs.extensions }}
       shell: bash
 
     - run: pytest ${{ inputs.options }} --junit-xml=.test_report.xml ${{ inputs.paths }}
