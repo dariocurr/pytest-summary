@@ -30,20 +30,23 @@ inputs:
 runs:
   using: composite
   steps:
-    - if: ${{ inputs.venv }}
-      run: source ${{ inputs.venv }}/bin/activate
-      shell: bash
 
     - if: ${{ !inputs.venv }}
-      run: pip install pytest ${{ inputs.extensions }}
+      run: ${{ inputs.venv }}/bin/python -m pip install pytest ${{ inputs.extensions }}
       shell: bash
 
-    - run: pytest ${{ inputs.options }} --junit-xml=.test_report.xml ${{ inputs.paths }}
+    - run: |
+        if [ -n "${{ inputs.venv }}" ]; then
+          python_cmd="${{ inputs.venv }}/bin/python"
+        else
+          python_cmd="python"
+        fi
+        "$python_cmd" -m pytest ${{ inputs.options }} --junit-xml=.test_report.xml ${{ inputs.paths }}
       shell: bash
 
     - uses: test-summary/action@v2.4
+      if: always()
       with:
         paths: .test_report.xml
         output: ${{ inputs.output }}
         show: ${{ inputs.show }}
-      if: always()
