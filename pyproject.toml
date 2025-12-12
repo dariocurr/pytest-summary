@@ -1,3 +1,25 @@
+[project]
+name = "pytest-summary"
+description = "Run tests using pytest and display a summary"
+authors = [
+    { name = "Dario Curreri", email = "dariocurr@gmail.com" },
+]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dynamic = [
+    "version",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+    "ruff",
+]
+test = [
+    "pytest",
+]
+
 [tool.ruff.lint]
 select = [
     "A",
