@@ -8,7 +8,7 @@ branding:
 
 inputs:
   extensions:
-    description: the pytest extensions to install along pytest (useless if venv is provided)
+    description: the pytest extensions to install along pytest
     required: false
   options:
     description: the pytest options
