@@ -23,17 +23,11 @@ inputs:
   show:
     description: which tests have to be shown in the summary
     required: false
-  venv:
-    description: path to virtual environment to activate (e.g. .venv)
-    required: false
 
 runs:
   using: composite
   steps:
-    - run: source ${{ inputs.venv }}/bin/activate
-      shell: bash
-
-    - if: ${{ !inputs.venv }}
+    - if: ${{ !inputs.extensions }}
       run: pip install pytest ${{ inputs.extensions }}
       shell: bash
 
