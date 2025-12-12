@@ -1,6 +1,6 @@
 # pytest-summary
 
-![Workflow badge](https://github.com/dariocurr/pytest-summary/actions/workflows/validate_action.yml/badge.svg)
+![Workflow badge](https://github.com/dariocurr/pytest-summary/actions/workflows/validate.yml/badge.svg)
 
 ![Example summary](https://user-images.githubusercontent.com/48800335/171606700-86ff892f-11d6-43e9-8f8c-ef9b1e459d3a.png)
 

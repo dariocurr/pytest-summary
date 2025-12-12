@@ -3,7 +3,7 @@ name: "[TEST] with paths"
 on:
   push:
     branches:
-      - develop
+      - dev*
 
   workflow_dispatch:
 

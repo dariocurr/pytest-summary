@@ -23,25 +23,15 @@ inputs:
   show:
     description: which tests have to be shown in the summary
     required: false
-  venv:
-    description: path to virtual environment to activate
-    required: false
 
 runs:
   using: composite
   steps:
-
-    - if: ${{ !inputs.venv }}
-      run: ${{ inputs.venv }}/bin/python -m pip install pytest ${{ inputs.extensions }}
+    - if: ${{ !inputs.extensions }}
+      run: pip install pytest ${{ inputs.extensions }}
       shell: bash
 
-    - run: |
-        if [ -n "${{ inputs.venv }}" ]; then
-          python_cmd="${{ inputs.venv }}/bin/python"
-        else
-          python_cmd="python"
-        fi
-        "$python_cmd" -m pytest ${{ inputs.options }} --junit-xml=.test_report.xml ${{ inputs.paths }}
+    - run: pytest ${{ inputs.options }} --junit-xml=.test_report.xml ${{ inputs.paths }}
       shell: bash
 
     - uses: test-summary/action@v2.4

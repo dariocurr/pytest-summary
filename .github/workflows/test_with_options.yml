@@ -3,7 +3,7 @@ name: "[TEST] with options"
 on:
   push:
     branches:
-      - develop
+      - dev*
 
   workflow_dispatch:
 
