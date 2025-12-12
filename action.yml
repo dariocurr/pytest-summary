@@ -8,7 +8,7 @@ branding:
 
 inputs:
   extensions:
-    description: the pytest extensions to install along pytest
+    description: the pytest extensions to install along pytest (useless if venv is provided)
     required: false
   options:
     description: the pytest options
@@ -24,24 +24,20 @@ inputs:
     description: which tests have to be shown in the summary
     required: false
   venv:
-    description: path to virtual environment to activate
+    description: path to virtual environment to activate (e.g. .venv)
     required: false
 
 runs:
   using: composite
   steps:
-
-    - if: ${{ !inputs.venv }}
-      run: ${{ inputs.venv }}/bin/python -m pip install pytest ${{ inputs.extensions }}
+    - run: source ${{ inputs.venv }}/bin/activate
       shell: bash
 
-    - run: |
-        if [ -n "${{ inputs.venv }}" ]; then
-          python_cmd="${{ inputs.venv }}/bin/python"
-        else
-          python_cmd="python"
-        fi
-        "$python_cmd" -m pytest ${{ inputs.options }} --junit-xml=.test_report.xml ${{ inputs.paths }}
+    - if: ${{ !inputs.venv }}
+      run: pip install pytest ${{ inputs.extensions }}
+      shell: bash
+
+    - run: pytest ${{ inputs.options }} --junit-xml=.test_report.xml ${{ inputs.paths }}
       shell: bash
 
     - uses: test-summary/action@v2.4
